@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class W1 extends StatelessWidget {
-  const W1({super.key, required this.add, required this.sub, required this.value});
-  //final VoidCallback onAdd; // call like this: onPressed: () => onAdd(),
+ 
+class W3 extends StatelessWidget {
+  const W3({super.key, required this.add1, required this.sub1, required this.value});
   final double value;
-  final Function add;
-  final Function sub;
+  final Function add1;
+  final Function sub1;
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +19,8 @@ class W1 extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             color: Theme.of(context).colorScheme.inversePrimary,
             child: Text(
-             value.toStringAsFixed(1),
-              key: const Key('W1Value'),
+              value.toStringAsFixed(1),
+              key: const Key('W3Value'),
             ),
           ),
           Container(
@@ -30,21 +30,22 @@ class W1 extends StatelessWidget {
               children: [
                 IconButton(
                     onPressed: () {
-                      add();
+                      add1();
                     },
                     icon: const Icon(Icons.add),
-                    key: const Key('W1Add')),
+                    key: const Key('W3Add')),
                 IconButton(
                     onPressed: () {
-                      sub();
+                      sub1();
                     },
                     icon: const Icon(Icons.remove),
-                    key: const Key('W1Sub'))
+                    key: const Key('W3Sub'))
               ],
             ),
           )
         ],
       ),
     );
+    ;
   }
 }
