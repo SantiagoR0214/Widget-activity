@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 class W1 extends StatelessWidget {
-  const W1({super.key});
+  const W1({super.key, required this.add, required this.sub, required this.value});
   //final VoidCallback onAdd; // call like this: onPressed: () => onAdd(),
-  //final double value;
+  final double value;
+  final Function add;
+  final Function sub;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +19,7 @@ class W1 extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             color: Theme.of(context).colorScheme.inversePrimary,
             child: Text(
-              '0',
+             value.toStringAsFixed(1),
               key: const Key('W1Value'),
             ),
           ),
@@ -26,11 +29,15 @@ class W1 extends StatelessWidget {
             child: Column(
               children: [
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      add();
+                    },
                     icon: const Icon(Icons.add),
                     key: const Key('W1Add')),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      sub();
+                    },
                     icon: const Icon(Icons.remove),
                     key: const Key('W1Sub'))
               ],
